@@ -14,6 +14,10 @@ action](https://matomo.org/faq/how-to/faq_30/) provided by the Login plugin.
 In this scenario is possibile to completely hide the login form and return an
 error page or redirect the user to another address.
 
+## Installation
+
+Refer to [this Matamo FAQ](https://matomo.org/faq/plugins/faq_21/).
+
 ## Usage
 
 Add the following section to your `config.ini.php`:
