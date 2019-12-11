@@ -41,7 +41,7 @@ class LoginFilterIp extends \Piwik\Plugin
      *
      * @return array the event handlers
      */
-    public function registerEvents(): array
+    public function registerEvents()
     {
         return [
             'Controller.Login.' => 'loginFilterIP',
@@ -87,7 +87,7 @@ class LoginFilterIp extends \Piwik\Plugin
      * 
      * @return bool whether the passed IP address is not allowed to login
      */
-    protected function isAllowedLogin(string $userIp): bool
+    protected function isAllowedLogin(string $userIp)
     {
         $userIp = NetworkIp::fromStringIP($userIp);
         $allowedIPs = $this->getAllowedIPs();
@@ -104,7 +104,7 @@ class LoginFilterIp extends \Piwik\Plugin
      * 
      * @return array the list of the allowed IPs/ranges
      */
-    protected function getAllowedIPs(): array
+    protected function getAllowedIPs()
     {
         if (!is_array($this->pluginConfig['allow_login_from'] ?? null)) {
             return [];
@@ -124,7 +124,7 @@ class LoginFilterIp extends \Piwik\Plugin
      * 
      * @return bool whether the unallowed IPs should be redirected
      */
-    protected function shouldRedirectUnallowedIPs(): bool
+    protected function shouldRedirectUnallowedIPs()
     {
         if (!is_string($this->pluginConfig['redirect_unallowed_to'] ?? null)) {
             return false;
